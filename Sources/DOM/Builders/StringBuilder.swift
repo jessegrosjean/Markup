@@ -1,4 +1,4 @@
-@_functionBuilder
+@resultBuilder
 public struct StringBuilder {
     // MARK: buildBlock
 

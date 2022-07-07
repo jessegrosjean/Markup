@@ -10,10 +10,14 @@ open class Node: RawRepresentable, Equatable, Hashable, CustomStringConvertible 
         return numericCast(xmlGetLineNo(xmlNode))
     }
 
+    public var isText: Bool {
+        return xmlNodeIsText(xmlNode) != 0
+    }
+
     public var isBlank: Bool {
         return xmlIsBlankNode(xmlNode) != 0
     }
-    
+
     public var spacePreservingBehavior: SpacePreservingBehavior? {
         return SpacePreservingBehavior(rawValue: xmlNodeGetSpacePreserve(xmlNode))
     }
