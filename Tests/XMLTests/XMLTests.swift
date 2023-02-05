@@ -3,6 +3,7 @@ import Foundation
 import XML
 
 final class XMLTests: XCTestCase {
+
     func testParseXML() throws {
         let xml = #"""
         <?xml version="1.0" encoding="UTF-8"?>
@@ -103,9 +104,9 @@ final class XMLTests: XCTestCase {
                 world
             </root>
         """#
-        
         let doc = try XML.Document(string: xml, options: [.removeBlankNodes])!
         let root = doc.root!
+
         XCTAssertEqual(root.name, "root")
         XCTAssertNil(root.next)
         XCTAssertNil(root.previous)

@@ -45,7 +45,7 @@ open class Node: RawRepresentable, Equatable, Hashable, CustomStringConvertible 
     
     public var rawValue: UnsafeMutableRawPointer
     
-    var xmlNode: xmlNodePtr {
+    public var xmlNode: xmlNodePtr {
         rawValue.bindMemory(to: _xmlNode.self, capacity: 1)
     }
     

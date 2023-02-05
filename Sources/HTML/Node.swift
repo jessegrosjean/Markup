@@ -24,10 +24,6 @@ extension Node: Constructable {
         }
     }
 
-    var xmlNode: xmlNodePtr {
-        rawValue.bindMemory(to: _xmlNode.self, capacity: 1)
-    }
-
     public var parent: Node? {
         return Node.construct(with: xmlNode.pointee.parent)
     }
